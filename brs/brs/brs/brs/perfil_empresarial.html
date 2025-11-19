@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRS GLAM — Entrar na Conta Empresarial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* APENAS ESTILOS ESPECÍFICOS DA PÁGINA DE LOGIN EMPRESARIAL */
+       
+        /* Variável para a cor rosa empresarial - mesma do botão da página principal */
+        :root {
+            --accent-empresarial: #ff6ec7; /* Rosa do botão empresarial da página principal */
+        }
+       
+        /* BOTÃO VOLTAR NO HEADER - COR ALTERADA PARA ROSA */
+        .header .login {
+            background: var(--accent-empresarial); /* Alterado para rosa empresarial */
+            color: #fff; /* Texto branco para contraste */
+        }
+       
+        .header .login:hover {
+            background: #ff4db8; /* Tom mais escuro do rosa no hover */
+        }
+       
+        /* Container principal do login */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            padding: 20px;
+            min-height: 70vh;
+        }
+
+
+        /* Card do formulário de login */
+        .login-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px 50px;
+            width: 100%;
+            max-width: 500px;
+            min-height: 550px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, .1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        /* Título do login */
+        .login-title {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 400;
+            color: #333;
+        }
+
+
+        /* Indicador do tipo de conta - COR ALTERADA PARA ROSA */
+        .account-type {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent-empresarial); /* Alterado para rosa empresarial */
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+
+        /* Grupos de formulário */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        /* Rótulos dos campos */
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+
+        /* Campos de entrada */
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: #f5f5f5;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            color: #333;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+
+        /* Campos de entrada em foco - COR ALTERADA PARA ROSA */
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-empresarial); /* Alterado para rosa empresarial */
+            box-shadow: 0 0 0 2px rgba(255, 110, 199, 0.2); /* Sombra rosa */
+        }
+
+
+        /* Checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+
+        /* Checkbox - COR ALTERADA PARA ROSA */
+        .checkbox {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent-empresarial); /* Alterado para rosa empresarial */
+        }
+
+
+        .checkbox-label {
+            font-size: 14px;
+            color: #333;
+        }
+
+
+        /* Link "Esqueci a senha" - COR ALTERADA PARA ROSA */
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+            font-size: 14px;
+            color: var(--accent-empresarial); /* Alterado para rosa empresarial */
+            text-decoration: none;
+        }
+
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Botão de login - COR ALTERADA PARA ROSA */
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent-empresarial); /* Alterado para rosa empresarial */
+            color: #fff; /* Texto branco para contraste com o rosa */
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+
+
+        /* Botão de login ao passar o mouse - COR ALTERADA PARA ROSA */
+        .login-button:hover {
+            background: #ff4db8; /* Tom mais escuro do rosa */
+            transform: translateY(-2px);
+        }
+
+
+        /* Links de cadastro */
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+
+        /* Link de cadastro - COR ALTERADA PARA ROSA */
+        .register-link a {
+            color: var(--accent-empresarial); /* Alterado para rosa empresarial */
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Responsividade específica da página de login */
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 30px 25px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 25px 20px;
+                min-height: 500px;
+            }
+           
+            .login-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER (usa CSS externo - mas o botão Voltar agora é rosa) -->
+    <header class="header">
+        <nav class="nav">
+            <div class="brand">
+                <div class="logo">
+                    <img src="brs.png" alt="Logo da minha empresa" style="height: auto; width: auto;">
+                </div>
+                <div>BRS GLAM</div>
+            </div>
+            <div class="menu">
+                <a class="pill" href="#">SEU EVENTO</a>
+                <a href="#">CATEGORIAS ▾</a>
+            </div>
+            <div class="spacer"></div>
+            <button class="login" onclick="window.location.href='index.html'">Voltar</button>
+        </nav>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL (usa CSS interno específico - agora com rosa) -->
+    <main class="login-container">
+        <div class="login-card">
+            <h1 class="login-title">Entre na sua conta</h1>
+            <div class="account-type">CONTA EMPRESARIAL</div>
+           
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="email">E-mail ou CNPJ</label>
+                    <input type="text" id="email" class="form-input" placeholder="E-mail ou CNPJ" required>
+                </div>
+               
+                <div class="form-group">
+                    <label class="form-label" for="password">Senha</label>
+                    <input type="password" id="password" class="form-input" placeholder="Senha" required>
+                    <a href="#" class="forgot-password">Esqueci a senha</a>
+                </div>
+               
+                <div class="checkbox-group">
+                    <input type="checkbox" id="human" class="checkbox" required>
+                    <label for="human" class="checkbox-label">Você é humano?</label>
+                </div>
+               
+                <button type="submit" class="login-button">Entrar</button>
+               
+                <div class="register-link">
+                    Não possui conta empresarial? <a href="cadastro_empresarial.html">Cadastre-se aqui</a>.
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+    <!-- FOOTER (usa CSS externo - mantém o azul) -->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Acesso rápido</h3>
+            <ul>
+                <li><a href="#">Cadastre seu evento</a></li>
+                <li><a href="#">Meu perfil</a></li>
+                <li><a href="#">Suporte ao fã</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Termos e Política</h3>
+            <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Sobre nós</h3>
+            <ul>
+                <li><a href="#">BRS GLAM</a></li>
+                <li><a href="#">Trabalhe conosco</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <div class="footer-bottom">
+        <div class="footer-logo">
+            <span></span> BRS GLAM
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+           
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const isHuman = document.getElementById('human').checked;
+           
+            if (!isHuman) {
+                alert('Por favor, confirme que você é humano.');
+                return;
+            }
+           
+            console.log('Tentativa de login empresarial:', { email, password });
+            alert('Login empresarial realizado com sucesso!');
+        });
+    </script>
+</body>
+</html>

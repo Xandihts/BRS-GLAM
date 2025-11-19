@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRS GLAM — Criar Conta Empresarial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .evento-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  padding: 45px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  margin: 60px auto;
+  color: #1a1a1a;
+  animation: fadeIn .3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.titulo-principal {
+  text-align: center;
+  font-size: 40px; /* Aumentado */
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #222121;
+}
+
+
+.subtitulo {
+  text-align: center;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ff6ec7;
+}
+
+.evento-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.evento-container label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000;
+}
+
+.evento-container input,
+.evento-container select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  font-size: 15px;
+  width: 100%;
+  background: #f8f8f8;
+  transition: .2s;
+}
+
+.evento-container input:focus,
+.evento-container select:focus {
+  outline: none;
+  border-color: #ff55be;
+  background: #ffffff;
+}
+
+.btn-enviar {
+  background: #ff55be;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 17px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: .2s;
+}
+
+.btn-enviar:hover {
+  background: #ff2fa8;
+}
+.btn-voltar img {
+  width: 60px;     /* ajuste conforme quiser */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-voltar img:hover {
+  transform: scale(1.05);
+}
+
+</style>
+<a href="index.html" class="btn-voltar">
+    <img src="brs.png" alt="Voltar ao início">
+</a>
+<div class="evento-container">
+
+    <div class="titulo-principal">Formulário para Evento</div>
+    <div class="subtitulo">Envie seu evento para revisão</div>
+
+  
+    <form>
+  
+      <label>Nome do Evento</label>
+      <input type="text" placeholder="Digite o nome do evento">
+  
+      <label>Data do Evento</label>
+      <input type="date">
+  
+      <label>Horário</label>
+      <input type="text" placeholder="Ex: 20h — 04h">
+  
+      <label>Local</label>
+      <input type="text" placeholder="Endereço do evento">
+  
+      <label>Capacidade Estimada</label>
+      <input type="number" placeholder="Ex: 350 pessoas">
+  
+      <label>Valor</label>
+      <input type="text" placeholder="Ex: R$ 50,00">
+  
+      <label>Atrações</label>
+      <input type="text" placeholder="Bandas, DJs ou artistas">
+  
+      <label>Categoria</label>
+      <select>
+        <option>Selecione...</option>
+        <option>Show</option>
+        <option>Festa</option>
+        <option>Palestra</option>
+        <option>Teatro</option>
+      </select>
+  
+      <label>Descrição do Evento</label>
+      <input type="text" placeholder="Descrição resumida do evento">
+  
+      <button class="btn-enviar">Cadastrar Evento</button>
+    </form>
+  
+  </div>
+  
