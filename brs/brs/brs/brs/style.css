@@ -8,10 +8,15 @@
   --shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-.logo-img{
-  height: 60px;
-  margin-right: 40px;
+.logo-img {
+  height: 48px;     /* tamanho ideal para logos horizontais */
+  width: auto;      /* mantém proporção perfeita */
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
 }
+
+
 
 /* RESET E ESTILOS GLOBAIS */
 * {
@@ -19,7 +24,7 @@
 }
 
 
-body {
+.body {
   margin: 0;
   font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color: var(--text);
